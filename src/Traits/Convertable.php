@@ -1,6 +1,6 @@
-<?php namespace KlarnaKp;
+<?php namespace KlarnaKp\Triats;
 
-abstract class Model
+trait Convertable
 {
     /**
      * @return array
