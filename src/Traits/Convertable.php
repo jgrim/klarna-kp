@@ -1,4 +1,4 @@
-<?php namespace KlarnaKp\Triats;
+<?php namespace KlarnaKp\Traits;
 
 trait Convertable
 {
