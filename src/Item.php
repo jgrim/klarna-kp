@@ -2,7 +2,7 @@
 
 class Item implements Contracts\Model
 {
-    use Traits\Convertable;
+    use Traits\Arrayable;
 
     const TYPE_PHYSICAL     = 'physical';
     const TYPE_DISCOUNT     = 'discount';

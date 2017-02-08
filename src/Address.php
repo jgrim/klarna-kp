@@ -3,7 +3,7 @@
 class Address implements Contracts\Model
 {
 
-    use Traits\Convertable;
+    use Traits\Arrayable;
 
     protected $givenName;
     protected $familyName;

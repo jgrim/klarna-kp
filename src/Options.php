@@ -2,7 +2,7 @@
 
 class Options implements Contracts\Model
 {
-    use Traits\Convertable;
+    use Traits\Arrayable;
 
     protected $colorButton;
     protected $colorButtonText;

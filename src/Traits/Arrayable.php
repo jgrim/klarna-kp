@@ -1,6 +1,6 @@
 <?php namespace KlarnaKp\Traits;
 
-trait Convertable
+trait Arrayable
 {
     /**
      * @return array

@@ -7,7 +7,7 @@
  */
 class MerchantUrls implements Contracts\Model
 {
-    use Traits\Convertable;
+    use Traits\Arrayable;
 
     protected $baseUri;
     protected $confirmation;

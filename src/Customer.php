@@ -2,7 +2,7 @@
 
 class Customer implements Contracts\Model
 {
-    use Traits\Convertable;
+    use Traits\Arrayable;
 
     //@todo determine attributes of customer on KP
 }
