@@ -1,6 +1,6 @@
-<?php namespace KlarnaKp;
+<?php namespace KlarnaKp\Traits;
 
-abstract class Model
+trait Arrayable
 {
     /**
      * @return array

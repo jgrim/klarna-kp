@@ -1,6 +1,8 @@
 <?php namespace KlarnaKp;
 
-class Customer extends Model
+class Customer implements Contracts\Model
 {
+    use Traits\Arrayable;
+
     //@todo determine attributes of customer on KP
 }

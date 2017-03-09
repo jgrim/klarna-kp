@@ -5,8 +5,10 @@
  *
  * @package KlarnaKp
  */
-class MerchantUrls extends Model
+class MerchantUrls implements Contracts\Model
 {
+    use Traits\Arrayable;
+
     protected $baseUri;
     protected $confirmation;
     protected $notification;

@@ -1,7 +1,9 @@
 <?php namespace KlarnaKp;
 
-class Item extends Model
+class Item implements Contracts\Model
 {
+    use Traits\Arrayable;
+
     const TYPE_PHYSICAL     = 'physical';
     const TYPE_DISCOUNT     = 'discount';
     const TYPE_SHIPPING_FEE = 'shipping_fee';

@@ -1,7 +1,9 @@
 <?php namespace KlarnaKp;
 
-class Options extends Model
+class Options implements Contracts\Model
 {
+    use Traits\Arrayable;
+
     protected $colorButton;
     protected $colorButtonText;
     protected $colorCheckbox;
