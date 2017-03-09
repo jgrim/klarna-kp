@@ -303,7 +303,12 @@ class Transaction
     public function addItem(Item $item)
     {
         $this->orderAmount += $item->getTotalAmount();
-        $this->orderTaxAmount += $item->getTotalTaxAmount();
+
+        if (Item::TYPE_SALES_TAX == $item->getType()) {
+            $this->orderTaxAmount = $item->getTotalAmount();
+        } else {
+            $this->orderTaxAmount += $item->getTotalTaxAmount();
+        }
 
         $this->items->addItem($item);
 

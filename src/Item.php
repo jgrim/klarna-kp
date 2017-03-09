@@ -100,7 +100,7 @@ class Item extends Model
      */
     public function setQuantity($quantity)
     {
-        $this->quantity = $quantity;
+        $this->quantity = (int)$quantity;
 
         return $this;
     }
@@ -140,7 +140,7 @@ class Item extends Model
      */
     public function setUnitPrice($unitPrice)
     {
-        $this->unitPrice = $unitPrice;
+        $this->unitPrice = $this->formatNumber($unitPrice);
 
         return $this;
     }
@@ -160,7 +160,7 @@ class Item extends Model
      */
     public function setTaxRate($taxRate)
     {
-        $this->taxRate = $taxRate;
+        $this->taxRate = $this->formatNumber($taxRate);
 
         return $this;
     }
@@ -180,7 +180,7 @@ class Item extends Model
      */
     public function setTotalAmount($totalAmount)
     {
-        $this->totalAmount = $totalAmount;
+        $this->totalAmount = $this->formatNumber($totalAmount);
 
         return $this;
     }
@@ -200,7 +200,7 @@ class Item extends Model
      */
     public function setTotalDiscountAmount($totalDiscountAmount)
     {
-        $this->totalDiscountAmount = $totalDiscountAmount;
+        $this->totalDiscountAmount = $this->formatNumber($totalDiscountAmount);
 
         return $this;
     }
@@ -220,7 +220,7 @@ class Item extends Model
      */
     public function setTotalTaxAmount($totalTaxAmount)
     {
-        $this->totalTaxAmount = $totalTaxAmount;
+        $this->totalTaxAmount = $this->formatNumber($totalTaxAmount);
 
         return $this;
     }
@@ -302,5 +302,19 @@ class Item extends Model
             'product_url'           => $this->getProductUrl(),
             'image_url'             => $this->getImageUrl(),
         ]);
+    }
+
+    /**
+     * @param $number
+     *
+     * @return int
+     */
+    protected function formatNumber($number)
+    {
+        if (is_float($number)) {
+            return (int)($number * 100);
+        }
+
+        return $number;
     }
 }
