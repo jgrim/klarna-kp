@@ -94,11 +94,20 @@ class MerchantUrls extends Model
 
     public function toArray()
     {
-        return array_filter([
-            'confirmation' => (string)$this->getConfirmation(),
-            'notification' => (string)$this->getNotification(),
-            'push'         => (string)$this->getPush(),
-        ]);
+        $urls = [];
+        if ($this->confirmation) {
+            $urls['confirmation'] = (string)$this->getConfirmation();
+        }
+
+        if ($this->notification) {
+            $urls['notification'] = (string)$this->getNotification();
+        }
+
+        if ($this->push) {
+            $urls['push'] = (string)$this->getPush();
+        }
+
+        return $urls;
     }
 
     /**

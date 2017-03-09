@@ -180,6 +180,10 @@ class Transaction
      */
     public function getBillingAddress()
     {
+        if (is_null($this->billingAddress)) {
+            $this->billingAddress = new Address();
+        }
+
         return $this->billingAddress;
     }
 
@@ -200,6 +204,10 @@ class Transaction
      */
     public function getShippingAddress()
     {
+        if (is_null($this->shippingAddress)) {
+            $this->shippingAddress = new Address();
+        }
+
         return $this->shippingAddress;
     }
 
@@ -220,6 +228,10 @@ class Transaction
      */
     public function getCustomer()
     {
+        if (is_null($this->customer)) {
+            $this->customer = new Customer();
+        }
+
         return $this->customer;
     }
 
@@ -240,6 +252,10 @@ class Transaction
      */
     public function getMerchantUrls()
     {
+        if (is_null($this->merchantUrls)) {
+            $this->merchantUrls = new MerchantUrls();
+        }
+
         return $this->merchantUrls;
     }
 
@@ -260,6 +276,10 @@ class Transaction
      */
     public function getOptions()
     {
+        if (is_null($this->options)) {
+            $this->options = new Options();
+        }
+
         return $this->options;
     }
 
