@@ -28,7 +28,7 @@ class Session extends \KlarnaCore\Resource
      */
     public function create($data)
     {
-        if ($data instanceof Transaction) {
+        if ($data instanceof \KlarnaCore\Transaction) {
             $data = $data->toArray();
         }
 
@@ -51,7 +51,7 @@ class Session extends \KlarnaCore\Resource
      */
     public function update($id, $data)
     {
-        if ($data instanceof Transaction) {
+        if ($data instanceof \KlarnaCore\Transaction) {
             $data = $data->toArray();
         }
 
@@ -74,7 +74,7 @@ class Session extends \KlarnaCore\Resource
      */
     public function authorize($id, $data)
     {
-        if ($data instanceof Transaction) {
+        if ($data instanceof \KlarnaCore\Transaction) {
             $data = $data->toArray();
         }
 
